@@ -1,0 +1,37 @@
+上午：
+晚睡起晚，10点40到实验室。未做一题，现搬思路。
+A：寻找C或P可以切换的次数，连着5个C或P时切断从新计算。例如：CPCP--4, CCCP--2, CCCCCC--2, CCCCCPPPPP--2。属简单题。
+  分析：记录连续的C以及P，累加即可。
+B：给定N个数，数一下不同的个数。
+	分析：数组标记状态即可。
+C：寻找嵌套区间的个数。（区间A在区间B里，个数+1），例如[1，10]、[2，9]、[3，8]、[4，7]
+	分析：先按第一个数字排序，再按第二个查找。
+D：
+this is my idea :
+define dp[i][j] = maximum length of subsequence of sequence of b that two first element of it would be equal to
+b_i and b_j
+dp[0][0] = 1 and dp[i][j] = 1 + dp[j][k] (k is last element that is b_k is equal to b_i)
+the only problem is to find k for every i and j that can be solved easy by make a vector for every b_i values of 
+indexes for every b_i (1<=b_i<=1000000) and binary search ...
+
+	题解：1. dp的方法。
+	
+E：给定一个 n*n 方格的坐标（x,y），单位时间向上下左右各扩散一格，超出边界不算，求扩展到C个方格需要的时间。
+	分析：
+
+下午：
+做3题，仅A一题。
+A：求所有只有2，3，5素因子的数的总数目，1500个。
+	分析：打表直接输出。
+B：打牌问题，从N往后顺时针发牌，包含牌的序号和花色，求从小到大的排序输出。
+	分析：排序主要问题。
+C：求在x坐标轴上建立几个雷达。给定雷达的辐射范围半径d，最少需要几个雷达可以覆盖所有给出的站点。
+	分析：还是求区间覆盖的问题。根据一般站点的坐标求取x轴符合要求的范围区间，根据区间覆盖，求最少雷达数目。
+D：
+题意：有一个离散的函数，x取值1到N，告诉对应的y的取值，求两个点，满足要求：这两个点中间的点都在这两点连线下方并且使得这条连线的倾角最大。找出起始位置最小的这样的两个点。
+分析：显然只要取相邻的两点就可以了，可以直接计算斜率，也可以比较相邻两条线段。
+
+E：给定一个区间[x1,x2]，按照规则：数a的所有因子（不含自身）的和 除以a，使得这个商最小。输出a。
+	分析：挨个计算似乎超时。
+
+
